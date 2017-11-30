@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="co.edu.escuelaing.carlos.studlan.Inicio">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_weight="0.16">
+
+        <ImageView
+            android:id="@+id/imgUsuario"
+            android:layout_width="124dp"
+            android:layout_height="match_parent"
+            android:layout_column="6"
+            android:layout_row="0"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bienvenido Profesor"
+                android:gravity="center_vertical"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="0.04" />
+
+            <TextView
+                android:id="@+id/txtNombreUsuario"
+                android:layout_width="261dp"
+                android:layout_height="36dp"
+                android:gravity="center_vertical"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_weight="0.15" />
+
+        </LinearLayout>
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:layout_weight="0.72">
+
+        <LinearLayout
+            android:id="@+id/btnsMaterias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/customCarouselView"
+                android:layout_width="match_parent"
+                android:layout_height="232dp"
+                android:layout_below="@+id/carouselLabel"
+                android:layout_marginTop="20dp"
+                app:disableAutoPlayOnUserInteraction="true"
+                app:fillColor="#FFFFFFFF"
+                app:pageColor="#00000000"
+                app:radius="6dp"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+    </GridLayout>
+
+    <Button
+        android:id="@+id/btnRegistrarCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:text="Registrarse a un curso" />
+
+    <Button
+        android:id="@+id/btnConfiguracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:text="Configuración" />
+
+</LinearLayout>

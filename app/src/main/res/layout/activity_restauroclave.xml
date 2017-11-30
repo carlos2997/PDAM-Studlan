@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.edu.escuelaing.carlos.studlan.RestauroClave">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escriba el correo asociado a la cuenta"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtCorreo"
+            android:layout_width="177dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/txtViewStatic"
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="@string/correo" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRestaurarClave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restaurar Clave" />
+</LinearLayout>

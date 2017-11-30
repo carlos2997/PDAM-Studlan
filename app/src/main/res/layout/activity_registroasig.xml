@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="co.edu.escuelaing.carlos.studlan.RegistroAsig"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/txtRegistroAsig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        tools:text="Ingrese el nombre de la asignatura a la que desea registrarse." />
+
+    <EditText
+        android:id="@+id/edtRegitroAsig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnRegistrarAsig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar Asignatura" />
+</LinearLayout>

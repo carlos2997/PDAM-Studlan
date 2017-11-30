@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Studlan</string>
+    <string name="title_activity_nueva_asignatura">NuevaAsignatura</string>
+    <string name="correo">"@mail.escuelaing.edu.co"</string>
+</resources>

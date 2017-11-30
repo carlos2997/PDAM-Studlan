@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.edu.escuelaing.carlos.studlan.Configuracion">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/edtNombreConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edtClaveAntConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Clave Antigua"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtClaveNuevaConfig"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Clave Nueva"
+                android:inputType="textPassword" />
+
+
+
+            <EditText
+                android:id="@+id/edtConfirmarClaveConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Confirmar Clave"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imgbUsuarioConfig"
+            android:layout_width="211dp"
+            android:layout_height="87dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.62"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <Button
+            android:id="@+id/btnGuardarConfig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:text="Actualizar Datos" />
+
+    </LinearLayout>
+
+</GridLayout>
