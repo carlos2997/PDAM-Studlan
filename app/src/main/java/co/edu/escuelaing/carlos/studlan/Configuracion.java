@@ -1,13 +1,16 @@
 package co.edu.escuelaing.carlos.studlan;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,10 +19,17 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import co.edu.escuelaing.carlos.database.DBAdapter;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 
 public class Configuracion extends AppCompatActivity implements View.OnClickListener{
 
@@ -27,7 +37,6 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
     private ImageButton imgbUsuarioConfig;
     private Button btnGuardarConfig;
     private SharedPreferences infoUsuario;
-    private DBAdapter dbAdapter;
     private static final int SELECT_FILE = 1;
 
     public void abrirGaleria(View v){
@@ -68,6 +77,73 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    private class POSTRegister extends AsyncTask<String[],Void,Void> {
+
+        private Context context;
+
+        public POSTRegister(Context context){
+            this.context = context;
+        }
+
+        @Override
+        protected Void doInBackground(String[]... datos) {
+            ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo network = connMgr.getActiveNetworkInfo();
+            if(network != null && network.isConnected()) {
+
+                try {
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+                    System.out.println("https://worknitor.herokuapp.com/Profesor/nuevosDatos/" + datos[0][0]);
+                    URL url = new URL("https://worknitor.herokuapp.com/Profesor/nuevosDatos/" + datos[0][0]);
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.setRequestMethod("PUT");
+                    httpURLConnection.setRequestProperty("Content-Type", "application/json");
+                    httpURLConnection.connect();
+
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("NombreUsuario", datos[0][1]);
+                    jsonObject.put("Clave", datos[0][2]);
+
+                    DataOutputStream wr = new DataOutputStream(httpURLConnection.getOutputStream());
+                    wr.writeBytes(jsonObject.toString());
+                    wr.flush();
+                    wr.close();
+                    int response = httpURLConnection.getResponseCode();
+                    if (response >= 200 && response <= 399) {
+                        Message.message(context, "Actualización exitosa!!");
+                        Intent regreso = new Intent();
+                        setResult(Activity.RESULT_OK, regreso);
+                        finish();
+                    } else {
+                        Message.message(context, "No fue posible realizar la actualización!!");
+                    }
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                Message.message(context,"No hay conexión a internet!!");
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            super.onPostExecute(result);
+        }
+    }
+
+
+
     @Override
     public void onClick(View v) {
         if(v.getId() == imgbUsuarioConfig.getId()){
@@ -85,8 +161,11 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
                 if(!claveAntConfig.equals(infoUsuario.getString("Clave","ABC"))){
                     Message.message(this,"La clave antigua no coincide con la registrada!!");
                 }else{
-                    nombreConfig = dbAdapter.changeName(nombreConfig);
-                    dbAdapter.updateUserPasTeach(infoUsuario.getInt("Carnet",0),nombreConfig,claveNuevaConfig);
+
+                    String[] datos = {Integer.toString(infoUsuario.getInt("Carnet",0)),nombreConfig,claveNuevaConfig};
+
+                    new POSTRegister(this).doInBackground(datos);
+
                     SharedPreferences.Editor datosGuardados;
                     datosGuardados = infoUsuario.edit();
                     datosGuardados.putString("NombreUsuario",nombreConfig);
@@ -116,10 +195,8 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
 
         imgbUsuarioConfig.setOnClickListener(this);
         btnGuardarConfig.setOnClickListener(this);
-        dbAdapter = new DBAdapter(this);
 
         infoUsuario = this.getSharedPreferences("co.edu.escuelaing.carlos.studlan", Context.MODE_PRIVATE);
     }
 
 }
-

@@ -1,45 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo1"
     android:orientation="vertical"
-    tools:context="co.edu.escuelaing.carlos.studlan.Login">
+    android:weightSum="1">
+
 
     <EditText
         android:id="@+id/edtCarnet"
+        style="@style/TextViewLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.03"
         android:ems="10"
         android:hint="Carnet"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/edtClave"
+        style="@style/TextViewLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.00"
+        android:layout_weight="0.02"
         android:ems="10"
         android:hint="Clave"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/btnIngresar"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ingresar" />
+        android:layout_height="200dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar" />
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="200dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.03"
+            android:background="@drawable/buttonlogin1"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:text="Ingresar"
+            android:textColor="#FDFCFC"
+            android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/btnRecordarClave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recordar Clave" />
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="200dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.03"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttonlogin2"
+            android:text="Registrar"
+            android:textColor="#FDFCFC"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnRecordarClave"
+            android:layout_width="200dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.03"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttonlogin3"
+            android:text="Recordar Clave"
+            android:textColor="#FDFCFC"
+            android:textSize="20dp" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

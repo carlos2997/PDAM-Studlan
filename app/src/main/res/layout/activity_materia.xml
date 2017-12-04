@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.edu.escuelaing.carlos.studlan.Materia">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <DatePicker
-        android:id="@+id/datePicker2"
-        android:layout_width="421dp"
-        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/txtMes"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:textColor="@color/blanco"
+        android:textSize="20dp" />
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cmpCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:compactCalendarBackgroundColor="#F8FAFA"
+        app:compactCalendarCurrentDayBackgroundColor="#04FDF9"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#B71C1C"
+        app:compactCalendarMultiEventIndicatorColor="#fff"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextColor="#050505"
+        app:compactCalendarTextSize="12sp" />
+
+
+
 </LinearLayout>

@@ -55,7 +55,7 @@ public class RestauroClave extends AppCompatActivity implements View.OnClickList
                 if (session != null) {
                     Message mm = new MimeMessage(session);
                     mm.setFrom(new InternetAddress(ConfiguracionEmail.EMAIL));
-                    mm.setSubject("Reestablecer contraseña Worknitor");
+                    mm.setSubject("Reestablecer contraseña Studlan");
                     mm.setRecipients(Message.RecipientType.TO,InternetAddress.parse(email[0]+"@mail.escuelaing.edu.co"));
                     mm.setContent("Su clave de acceso es: "+infoUsuario.getString("Clave","ASD"),"text/html; charset=utf-8");
                     Transport.send(mm);

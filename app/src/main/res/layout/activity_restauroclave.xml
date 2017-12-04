@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="co.edu.escuelaing.carlos.studlan.RestauroClave">
+    android:background="@drawable/fondo6"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
@@ -13,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Escriba el correo asociado a la cuenta"
         android:textSize="23dp"
+        style="@style/TextViewLogin"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -25,6 +24,7 @@
             android:layout_width="177dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            style="@style/TextViewLogin"
             android:hint="Correo"
             android:inputType="textEmailAddress" />
 
@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textSize="16dp"
+            style="@style/TextViewLogin"
             android:textStyle="bold"
             android:text="@string/correo" />
 
@@ -41,7 +42,11 @@
 
     <Button
         android:id="@+id/btnRestaurarClave"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/buttonlogin1"
+        android:layout_gravity="center"
+        android:layout_width="260dp"
+        android:textColor="#FDFCFC"
+        android:textSize="20dp"
         android:text="Restaurar Clave" />
 </LinearLayout>

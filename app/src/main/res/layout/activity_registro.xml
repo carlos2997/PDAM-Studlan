@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1"
-    tools:context="co.edu.escuelaing.carlos.studlan.Registro">
+    android:background="@drawable/fondo4"
+    android:weightSum="1">
 
     <EditText
         android:id="@+id/edtNombre"
@@ -14,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.02"
         android:ems="10"
+        style="@style/TextViewLogin"
         android:hint="Nombre"
         android:inputType="textPersonName" />
 
@@ -22,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.02"
+        style="@style/TextViewLogin"
         android:ems="10"
         android:hint="Carnet"
         android:inputType="number" />
@@ -36,12 +36,14 @@
             android:layout_width="177dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            style="@style/TextViewLogin"
             android:hint="Correo"
             android:inputType="textEmailAddress" />
 
         <TextView
             android:id="@+id/txtViewStatic"
             android:layout_width="189dp"
+            style="@style/TextViewLogin"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textSize="16dp"
@@ -55,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.02"
+        style="@style/TextViewLogin"
         android:ems="10"
         android:hint="Clave"
         android:inputType="textPassword" />
@@ -64,6 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.02"
+        style="@style/TextViewLogin"
         android:ems="10"
         android:hint="Confirmar Clave"
         android:inputType="textPassword" />
@@ -72,14 +76,19 @@
         android:id="@+id/cboxTerminos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/TextViewLogin"
         android:layout_weight="0.10"
         android:text="Aceptar Términos y Condiciones" />
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.02"
+        android:background="@drawable/buttonlogin1"
+        android:layout_gravity="center"
+        android:layout_width="260dp"
+        android:textColor="#FDFCFC"
+        android:textSize="20dp"
         android:text="Registrarse" />
-
 </LinearLayout>
+
