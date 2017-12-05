@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.edu.escuelaing.carlos.studlan">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +24,11 @@
         <activity android:name=".Inicio" />
         <activity android:name=".Configuracion" />
         <activity android:name=".Materia" />
-        <activity android:name=".RegistroAsig"></activity>
+        <activity android:name=".RegistroAsig" />
+        <activity
+            android:name=".unionAsignatura"
+            android:label="@string/title_activity_union_asignatura"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

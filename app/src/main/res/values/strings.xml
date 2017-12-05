@@ -4,5 +4,6 @@
     <string name="correo">"@mail.escuelaing.edu.co"</string>
     <string name="inciarEvento">Iniciar Evento</string>
     <string name="cancelarEvento">Cancelar</string>
+    <string name="title_activity_union_asignatura">unionAsignatura</string>
 
 </resources>

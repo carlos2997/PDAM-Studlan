@@ -30,9 +30,9 @@
                 android:id="@+id/txtUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bienvenido Profesor"
+                android:text="Bienvenido Estudiante"
                 android:gravity="center_vertical"
-                android:textSize="25dp"
+                android:textSize="24dp"
                 style="@style/TextViewLogin"
                 android:textStyle="bold"
                 android:layout_weight="0.04" />
@@ -79,7 +79,7 @@
     </GridLayout>
 
     <Button
-        android:id="@+id/btnInicioAsignatura"
+        android:id="@+id/btnUnirseAsig"
         android:layout_width="260dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
         android:textSize="20dp"
         android:textColor="#FDFCFC"
         android:background="@drawable/buttonlogin1"
-        android:text="Iniciar Asignatura" />
+        android:text="Unirse Asignatura" />
 
     <Button
         android:id="@+id/btnConfiguracion"

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:text="Escriba los datos para el regitro de la asignatura" />
+
+    <EditText
+        android:id="@+id/ptxtCarnetMaestro"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:hint="Carnet del profesor"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/ptxtNombreAsignatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nombre de la asignatura"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/btxtClaveAsignatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Clave de la asignatura"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnRevisarUnionAsig"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Unirse a la asignatura" />
+</LinearLayout>
